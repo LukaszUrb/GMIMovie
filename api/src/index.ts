@@ -1,7 +1,13 @@
-import { APP_PORT, APP_ORIGIN } from "./config";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.join(path.dirname(require.main.filename), "../.env") });
+import { APP_PORT, MONGO_URI, MONGO_OPTIONS, APP_ORIGIN } from "./config";
 import { createApp } from "./app";
 
-((): void => {
+
+(async (): Promise<void> => {
+    await mongoose.connect(MONGO_URI, MONGO_OPTIONS);
     const app = createApp();
     app.listen(APP_PORT, () => {
         // eslint-disable-next-line no-console
