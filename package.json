@@ -8,8 +8,12 @@
     },
     "main": "index.js",
     "scripts": {
-      "commit": "git-cz"
-    },
+        "up": "mkdir -p data && cd ./docker && docker-compose up -d",
+        "stop": "cd ./docker && docker-compose stop",
+        "down": "cd ./docker && docker-compose down",
+        "restart": "cd ./docker && docker-compose down && docker-compose up -d",
+        "commit": "git-cz"
+      },
     "keywords": [],
     "author": "",
     "license": "MIT",
