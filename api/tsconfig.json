@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "sourceMap": true,
+        "noEmitOnError": true,
+        "target": "es2018",
+        "removeComments": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
