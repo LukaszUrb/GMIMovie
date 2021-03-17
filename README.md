@@ -15,10 +15,10 @@ REST Api created for fetching data from `http://www.omdbapi.com/`.
 1. Download repository
 2. Provide `.env` file for `api` based on `.env.api.example` file
 3. Provide `.env` file for `docker` based on `.env.docker.example` file
+4. Provide `app.conf` file for nginx
 5. Run `npm run up` from main directory
+6. If you are running this app for the first time, please customise and run `init-letsencrypt.sh` script as sudo from `docker` dir (generating certificates)
 7. To stop app run `npm run down` from main directory
-
-*For simplifying the application running process, `.env.api.example` and `.env.docker.example` contains a valid configuration, so you can simply rename these files to `.env` and everything will work.*
 
 
 ## API
@@ -42,57 +42,57 @@ Detailed request config when using curl:
 
 #### HOME
 ```sh
-curl localhost:3000/
+curl https://lucasapp.pl/
 ```
 
 #### CREATE MOVIE
 ```sh
-curl -v -X POST localhost:3000/movies/add?title=...
+curl -v -X POST https://lucasapp.pl/movies/add?title=...
 ```
 
 Example:
 ```sh
-curl -v -X POST localhost:3000/movies/add?title=Shrek
+curl -v -X POST https://lucasapp.pl/movies/add?title=Shrek
 ```
 
 #### GET ALL MOVIES
 ```sh
-curl localhost:3000/movies
+curl https://lucasapp.pl/movies
 ```
 
 #### GET MOVIE BY ID
 ```sh
-curl localhost:3000/movies?id=...
+curl https://lucasapp.pl/movies?id=...
 ```
 
 Example:
 ```sh
-curl localhost:3000/movies?id=6051e7e3f0eefe0010168941
+curl https://lucasapp.pl/movies?id=6051e7e3f0eefe0010168941
 ```
 
 #### ADD COMMENT
 ```sh
-curl -v -X POST localhost:3000/movies/.../comments/add -H 'Content-Type: application/json' -d '{"creator":"...", "content":"..."}'
+curl -v -X POST https://lucasapp.pl/movies/.../comments/add -H 'Content-Type: application/json' -d '{"creator":"...", "content":"..."}'
 ```
 
 Example:
 ```sh
-curl -v -X POST localhost:3000/movies/6051e7e3f0eefe0010168941/comments/add -H 'Content-Type: application/json' -d '{"creator":"Yoda", "content":"May the power be with you"}'
+curl -v -X POST https://lucasapp.pl/movies/6051e7e3f0eefe0010168941/comments/add -H 'Content-Type: application/json' -d '{"creator":"Yoda", "content":"May the power be with you"}'
 ```
 
 #### GET ALL COMMENTS
 ```sh
-curl localhost:3000/movies/comments
+curl https://lucasapp.pl/movies/comments
 ```
 
 #### GET ALL COMMENTS FOR SPECIFIC MOVIE
 ```sh
-curl localhost:3000/movies/.../comments/
+curl https://lucasapp.pl/movies/.../comments/
 ```
 
 Example:
 ```sh
-curl localhost:3000/movies/6051e7e3f0eefe0010168941/comments/
+curl https://lucasapp.pl/movies/6051e7e3f0eefe0010168941/comments/
 ```
 
 ## INCOMING DATA FORMAT
