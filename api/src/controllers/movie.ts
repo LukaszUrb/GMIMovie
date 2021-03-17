@@ -81,7 +81,7 @@ export const getMoviesCommentsController = async (req: RequestParamsId, res: Res
 
     if (!movieDoc) throw new NotFound("This movie does not exist.");
 
-    const commentDocs = await Comment.find({ movie: movieDoc.id });
+    await populateEntity<IMovie, MovieDocument>(["comments"], movieDoc);
 
-    return res.json(commentDocs.length > 0 ? commentDocs : { message: "This movie does not have any comments yet." });
+    return res.json(movieDoc.comments.length > 0 ? movieDoc.comments : { message: "This movie does not have any comments yet." });
 };
