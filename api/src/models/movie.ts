@@ -1,4 +1,5 @@
 import { Schema, model, Document } from "mongoose";
+import { LangDocument, PersonDocument } from ".";
 import { CommentDocument } from "./comment";
 
 export interface IMovie {
@@ -6,9 +7,9 @@ export interface IMovie {
     released: Date;
     plot: string;
     comments?: CommentDocument[];
-    languages?: string[];
-    director?: string[];
-    actors?: string[];
+    languages?: string[] | LangDocument[];
+    director?: string[] | PersonDocument[];
+    actors?: string[] | PersonDocument[];
     createdAt?: Date;
     updatedAt?: Date;
 }
