@@ -11,7 +11,7 @@ class OmdbApi {
     }
 
     private validateResponse(payload: IPayloadOmdbMovie): void {
-        if (payload.Response === "False") throw new NotFound();
+        if (payload.Response === "False") throw new NotFound("Movie not found in external service.");
     }
 
     private async serialize(payload: IPayloadOmdbMovie): Promise<IMovie> {
