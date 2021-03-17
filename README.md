@@ -94,3 +94,37 @@ Example:
 ```sh
 curl localhost:3000/movies/6051e7e3f0eefe0010168941/comments/
 ```
+
+## INCOMING DATA FORMAT
+
+#### MOVIE (MovieDocument)
+```js
+title: string;
+released: Date;
+plot: string;
+comments?: CommentDocument[];
+languages?: LangDocument[];
+director?: PersonDocument[];
+actors?: PersonDocument[];
+createdAt?: Date;
+updatedAt?: Date;
+```
+
+#### COMMENT (CommentDocument)
+```js
+content: string;
+creator: string;
+movie: string;
+createdAt?: Date;
+updatedAt?: Date;
+```
+
+#### LANGUAGE (LangDocument)
+```js
+name: string;
+```
+
+#### PERSON (PersonDocument)
+```js
+name: string;
+```
