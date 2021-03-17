@@ -5,8 +5,8 @@ services:
     env_file:
       - .env
     image: mongo
-    ports:
-      - '27017:27017'
+    # ports:
+    #   - '27017:27017'
     restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
@@ -17,3 +17,16 @@ services:
     volumes:
       # - /data:/data/db
       - ./mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+
+  api:
+    build:
+      context: ../
+      dockerfile: ./docker/api.Dockerfile
+    restart: unless-stopped
+    user: 1000:1000
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - '3000:3000'
