@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "97f946e5-6da7-44af-a07c-64d17d69459f",
+		"name": "GMIMovie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/add?title=Shrek",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						"add"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Shrek"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/movies",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/movies?id=6051d4c847f78f38deb168a2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6051d4c847f78f38deb168a2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creator\" : \"Yoda\",\n    \"content\" : \"May the power be with the director!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/6051dd4812c6c30010096905/comments/add",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						"6051dd4812c6c30010096905",
+						"comments",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all comments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/movies/comments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie's comments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/6051dd8112c6c3001009690d/comments/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						"6051dd8112c6c3001009690d",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
