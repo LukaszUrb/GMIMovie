@@ -1,3 +1,3 @@
-export * from "./home";
+export * from "./joi";
 
 export * from "./movie";

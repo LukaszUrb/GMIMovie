@@ -6,4 +6,4 @@ const router = Router();
 
 router.get("/", catchAsync(homeController));
 
-export { router as homeRoute };  
+export { router as homeRoute };

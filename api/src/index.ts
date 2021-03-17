@@ -5,7 +5,6 @@ dotenv.config({ path: path.join(path.dirname(require.main.filename), "../.env") 
 import { APP_PORT, MONGO_URI, MONGO_OPTIONS, APP_ORIGIN } from "./config";
 import { createApp } from "./app";
 
-
 (async (): Promise<void> => {
     await mongoose.connect(MONGO_URI, MONGO_OPTIONS);
     const app = createApp();
