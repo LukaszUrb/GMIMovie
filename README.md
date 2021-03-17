@@ -102,12 +102,12 @@ curl localhost:3000/movies/6051e7e3f0eefe0010168941/comments/
 title: string;
 released: Date;
 plot: string;
-comments?: CommentDocument[];
-languages?: LangDocument[];
-director?: PersonDocument[];
-actors?: PersonDocument[];
-createdAt?: Date;
-updatedAt?: Date;
+comments: CommentDocument[];
+languages: LangDocument[];
+director: PersonDocument[];
+actors: PersonDocument[];
+createdAt: Date;
+updatedAt: Date;
 ```
 
 #### COMMENT (CommentDocument)
@@ -115,8 +115,8 @@ updatedAt?: Date;
 content: string;
 creator: string;
 movie: string;
-createdAt?: Date;
-updatedAt?: Date;
+createdAt: Date;
+updatedAt: Date;
 ```
 
 #### LANGUAGE (LangDocument)
