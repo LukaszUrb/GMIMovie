@@ -3,7 +3,7 @@ import { Model } from "mongoose";
 import { API_KEY_OMDB } from "../../config";
 import { IPayloadOmdbMovie } from "./interfaces";
 import { NotFound } from "../../errors";
-import { dataFetch, synchEntity } from "../../utils";
+import { customDateFormat, dataFetch, synchEntity } from "../../utils";
 
 class OmdbApi {
     private getUrl(title: string): string {
@@ -19,7 +19,7 @@ class OmdbApi {
             title: payload.Title,
             languages: await synchEntity<ILang, LangDocument, Model<LangDocument>>("name", Lang, { name: payload.Language }, ", "),
             plot: payload.Plot,
-            released: payload.Released,
+            released: customDateFormat(payload.Released),
             actors: await synchEntity<IPerson, PersonDocument, Model<PersonDocument>>("name", Person, { name: payload.Actors, role: "actor" }, ", "),
             director: await synchEntity<IPerson, PersonDocument, Model<PersonDocument>>("name", Person, { name: payload.Director, role: "director" }, ", ")
         };

@@ -3,7 +3,7 @@ import { CommentDocument } from "./comment";
 
 export interface IMovie {
     title: string;
-    released: string;
+    released: Date;
     plot: string;
     comments?: CommentDocument[];
     languages?: string[];
@@ -16,7 +16,7 @@ export interface IMovie {
 const movieSchema = new Schema<MovieDocument>(
     {
         title: { type: String, required: true },
-        released: { type: String },
+        released: { type: Date },
         plot: { type: String },
         languages: [
             {

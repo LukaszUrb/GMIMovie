@@ -21,3 +21,7 @@ export async function dataFetch<TPayload>(url: string): Promise<TPayload> {
 
     return await response.json();
 }
+
+export function customDateFormat(stringDate: string): Date {
+    return new Date(stringDate);
+}
