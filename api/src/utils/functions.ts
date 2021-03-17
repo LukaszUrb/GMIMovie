@@ -23,5 +23,5 @@ export async function dataFetch<TPayload>(url: string): Promise<TPayload> {
 }
 
 export function customDateFormat(stringDate: string): Date {
-    return new Date(Date.parse(stringDate));
+    return new Date(stringDate);
 }
