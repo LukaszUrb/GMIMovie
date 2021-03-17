@@ -99,15 +99,13 @@ curl localhost:3000/movies/6051e7e3f0eefe0010168941/comments/
 
 #### MOVIE (MovieDocument)
 ```js
+_id: string;
 title: string;
 released: Date;
 plot: string;
-comments: CommentDocument[];
 languages: LangDocument[];
 director: PersonDocument[];
 actors: PersonDocument[];
-createdAt: Date;
-updatedAt: Date;
 ```
 
 #### COMMENT (CommentDocument)
