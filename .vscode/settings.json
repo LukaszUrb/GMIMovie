@@ -17,7 +17,12 @@
         "*.yml"
     ],
     "cSpell.words": [
+        "INITDB",
         "MILLISEC",
-        "mongodb"
+        "Metascore",
+        "Omdb",
+        "imdb",
+        "mongodb",
+        "ombd"
     ]
 }
