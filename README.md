@@ -129,4 +129,4 @@ name: string;
 name: string;
 ```
 
-*Notice that, data from general endpoints (`/`) always come as array but data from specific endpoints (`/?id`) come as singular object.*
+*Notice that, data from general endpoints (`/`) always come as array but data from specific endpoints (`?id`) come as singular object.*
