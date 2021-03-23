@@ -1,30 +1,30 @@
 {
-    "name": "gmimovie",
-    "version": "1.0.0",
-    "description": "GMIMovie",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/LukaszUrb/GMIMovie"
-    },
-    "main": "index.js",
-    "scripts": {
-        "up": "mkdir -p data && cd ./docker && docker-compose up -d",
-        "stop": "cd ./docker && docker-compose stop",
-        "down": "cd ./docker && docker-compose down",
-        "restart": "cd ./docker && docker-compose down && docker-compose up -d",
-        "commit": "git-cz"
-      },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {
-      "commitizen": "4.0.3",
-      "cz-conventional-changelog": "3.0.2"
-    },
-    "config": {
-      "commitizen": {
-        "path": "cz-conventional-changelog"
-      }
+  "name": "movie-api",
+  "version": "1.0.0",
+  "description": "movie-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LukaszUrb/MovieApi"
+  },
+  "main": "index.js",
+  "scripts": {
+    "up": "mkdir -p data && cd ./docker && docker-compose up -d",
+    "stop": "cd ./docker && docker-compose stop",
+    "down": "cd ./docker && docker-compose down",
+    "restart": "cd ./docker && docker-compose down && docker-compose up -d",
+    "commit": "git-cz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "commitizen": "4.0.3",
+    "cz-conventional-changelog": "3.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
     }
   }
+}
