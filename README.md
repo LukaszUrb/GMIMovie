@@ -6,7 +6,9 @@ REST Api created for fetching data from `http://www.omdbapi.com/`.
   - Node.js + Express + TypeScript 
   - MongoDB 
   - Docker
+  - Nginx
   - PM2
+  - Certbot
 
   ## Prerequisites
 - `docker` and `docker-compose`
