@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "97f946e5-6da7-44af-a07c-64d17d69459f",
-		"name": "GMIMovie",
+		"name": "MovieApi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
