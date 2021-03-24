@@ -1,5 +1,4 @@
 import { ILang, IMovie, IPerson, Lang, LangDocument, Person, PersonDocument } from "../../models";
-import { Model } from "mongoose";
 import { API_KEY_OMDB } from "../../config";
 import { IPayloadOmdbMovie } from "./interfaces";
 import { NotFound } from "../../errors";
@@ -17,11 +16,11 @@ class OmdbApi {
     private async serialize(payload: IPayloadOmdbMovie): Promise<IMovie> {
         return {
             title: payload.Title,
-            languages: await synchEntity<ILang, LangDocument, Model<LangDocument>>("name", Lang, { name: payload.Language }, ", "),
+            languages: await synchEntity<ILang>("name", Lang, { name: payload.Language }, ", "),
             plot: payload.Plot,
             released: customDateFormat(payload.Released),
-            actors: await synchEntity<IPerson, PersonDocument, Model<PersonDocument>>("name", Person, { name: payload.Actors, role: "actor" }, ", "),
-            director: await synchEntity<IPerson, PersonDocument, Model<PersonDocument>>("name", Person, { name: payload.Director, role: "director" }, ", ")
+            actors: await synchEntity<IPerson>("name", Person, { name: payload.Actors, role: "actor" }, ", "),
+            director: await synchEntity<IPerson>("name", Person, { name: payload.Director, role: "director" }, ", ")
         };
     }
 
